@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.logo-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+}
+
+.searchbar input {
+    border: 0;
+    padding: 20px;
+}
+
+.searchbar button {
+    padding: 20px;
+    border: 0;
+}
+
+.search-logo button {
+    border: 0;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icons div {
+    font-size: 20px;
+}
+
+.icons div a {
+    text-decoration: none;
+    color: black;
+}
+
+.hr {
+    border: 5.47px solid #a3293b;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.logo-sub {
+    margin-right: 200px;
+}

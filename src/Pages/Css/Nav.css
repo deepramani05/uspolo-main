@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(19, 41, 75);  
+}
+
+.nav-a {
+    text-decoration: none;
+    line-height: 30px;
+}
+
+.nav-a h3 {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 20px;
+}
