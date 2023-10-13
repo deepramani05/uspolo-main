@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import "../Css/Home.css";
 import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
 
 const Signup = () => {
   let [name, setName] = useState("");
@@ -26,7 +27,13 @@ const Signup = () => {
       .post(`http://localhost:5000/users`, data)
       .then((res) => {
         console.log(res.data);
-        alert("user Registered");
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'User Registered !!!',
+          showConfirmButton: false,
+          timer: 1500
+        })
       })
       .catch((err) => {
         console.log(err);

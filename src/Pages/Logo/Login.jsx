@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "../Css/Home.css";
 import { useDispatch, useSelector } from "react-redux";
 import {handlelogin} from '../Redux/Action'
+import Swal from "sweetalert2";
 
 const Login = () => {
   let [email, setEmail] = useState("");
@@ -23,13 +24,21 @@ const Login = () => {
         dispatch(handlelogin(res.data[0]))
         if (res.data.length > 0) {
           if (res.data[0].email == email && res.data[0].password == password) {
-            alert("Logged In")
+            Swal.fire('Login Succesfully !!!')
           } else {
-            alert("Login Failed")
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!'
+            })
           }
         }
         else{
-          alert("User not Registered")
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'User not Registered !!!'
+          })
         }
       })
       .catch((err) => {

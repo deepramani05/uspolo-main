@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import '../Css/Home.css'
+import Swal from "sweetalert2";
 
 const Single = () => {
   let [Data, setdata] = useState("");
@@ -14,7 +15,15 @@ const Single = () => {
     axios
       .post(`http://localhost:5000/cart`,Data)
       .then((res) => {
-        // alert("Added into the cart");
+        Swal.fire({
+          title: 'Your Product Has Been added into your cart',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
         console.log(res.data);
       })
       .catch((err) => {
@@ -27,6 +36,7 @@ const Single = () => {
       .get(`https://fakestoreapi.com/products/${id}`)
       .then((res) => {
         setdata(res.data);
+        
       })
       .catch((err) => {
         console.log(err);
